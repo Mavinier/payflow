@@ -1,9 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:payflow/modules/home/home_page.dart';
-import 'package:payflow/modules/login/login_page.dart';
-import 'package:payflow/modules/splash/splash_page.dart';
-import 'package:payflow/shared/themes/app_colors.dart';
 
 import 'app_widget.dart';
 
@@ -36,7 +32,7 @@ class _AppFirebaseState extends State<AppFirebase> {
               ),
             );
           } else if (snapshot.connectionState == ConnectionState.done) {
-            return const AppWidget();
+            return AppWidget();
           } else {
             return const Material(
               child: Center(
