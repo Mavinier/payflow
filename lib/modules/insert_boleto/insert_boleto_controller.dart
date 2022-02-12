@@ -29,7 +29,7 @@ class InsertBoletoController {
     );
   }
 
-  Future<void> saveBoleto() async {
+  Future<void> salvarBoleto() async {
     try {
       final instance = await SharedPreferences.getInstance();
       final boletos = instance.getStringList("boletos") ?? <String>[];
@@ -44,7 +44,7 @@ class InsertBoletoController {
   Future<void> cadastrarBoleto() async {
     final form = formKey.currentState;
     if (form!.validate()) {
-      return saveBoleto();
+      return await salvarBoleto();
     }
   }
 }

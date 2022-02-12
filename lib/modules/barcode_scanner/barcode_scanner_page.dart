@@ -21,7 +21,11 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
     controller.getAvailableCameras();
     controller.statusNotifier.addListener(() {
       if (controller.status.hasBarcode) {
-        Navigator.pushReplacementNamed(context, "/insert_boleto");
+        Navigator.pushReplacementNamed(
+          context,
+          "/insert_boleto",
+          arguments: controller.status.barcode,
+        );
       }
     });
 
@@ -66,7 +70,7 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
                     "Escaneie o código de barras do boleto",
                     style: TextStyles.buttonBackground,
                   ),
-                  leading: BackButton(
+                  leading: const BackButton(
                     color: AppColors.background,
                   ),
                 ),
