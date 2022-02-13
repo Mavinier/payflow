@@ -115,7 +115,9 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
                             controller.scanWithCamera();
                           },
                           secondaryLabel: "Digitar código",
-                          secondaryOnPressed: () {},
+                          secondaryOnPressed: () async {
+                            await Navigator.pushNamed(context, "/insert_boleto");
+                          },
                           title:
                               "Não foi possível identificar um código de barras.",
                           subTitle:
